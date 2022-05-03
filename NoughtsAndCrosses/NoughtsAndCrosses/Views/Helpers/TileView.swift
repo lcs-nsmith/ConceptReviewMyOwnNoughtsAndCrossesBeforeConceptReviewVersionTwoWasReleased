@@ -24,6 +24,8 @@ struct TileView: View {
     // Allows turn to be advanced.
     @Binding var turn: Int
     
+    var gameWon: Bool
+    
     // MARK: Computed property
     var body: some View {
         Text(state)
@@ -35,7 +37,7 @@ struct TileView: View {
             .contentShape(Rectangle())
         // Taps on view uses the tile
             .onTapGesture {
-                if state == "" {
+                if state == "" && gameWon == false {
                     // Make this tile show the symbol for the current player
                     state = player
                     
@@ -52,12 +54,12 @@ struct TileView_Previews: PreviewProvider {
     static var previews: some View {
         TileView(state: .constant(empty),
                  player: nought,
-                 turn: .constant(1))
+                 turn: .constant(1), gameWon: false)
         TileView(state: .constant(nought),
                  player: nought,
-                 turn: .constant(1))
+                 turn: .constant(1), gameWon: false)
         TileView(state: .constant(cross),
                  player: nought,
-                 turn: .constant(1))
+                 turn: .constant(1), gameWon: false)
     }
 }

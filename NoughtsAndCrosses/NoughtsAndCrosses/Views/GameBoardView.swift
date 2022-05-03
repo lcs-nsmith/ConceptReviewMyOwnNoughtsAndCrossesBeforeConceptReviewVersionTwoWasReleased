@@ -59,39 +59,39 @@ struct GameBoardView: View {
                 // to the helper view using a binding
                 TileView(state: $upperLeft,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
                 TileView(state: $upperMiddle,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
                 TileView(state: $upperRight,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
             }
             
             // Middle row
             HStack {
                 TileView(state: $middleLeft,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
                 TileView(state: $middleMiddle,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
                 TileView(state: $middleRight,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
             }
             
             // Bottom row
             HStack {
                 TileView(state: $bottomLeft,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
                 TileView(state: $bottomMiddle,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
                 TileView(state: $bottomRight,
                          player: currentPlayer,
-                         turn: $currentTurn)
+                         turn: $currentTurn, gameWon: gameWon)
             }
             
             Spacer()
