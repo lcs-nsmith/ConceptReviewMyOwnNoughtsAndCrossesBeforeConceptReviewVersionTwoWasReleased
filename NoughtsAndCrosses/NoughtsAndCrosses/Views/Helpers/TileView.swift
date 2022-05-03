@@ -30,17 +30,18 @@ struct TileView: View {
             .font(.largeTitle)
             .frame(width: 50, height: 50)
             .border(Color.black, width: 3)
-            // Ensure the "hit box" is the entire view
-            // (Normally transparent parts of view cannot be tapped)
+        // Ensure the "hit box" is the entire view
+        // (Normally transparent parts of view cannot be tapped)
             .contentShape(Rectangle())
-            // Taps on view uses the tile
+        // Taps on view uses the tile
             .onTapGesture {
-                
-                // Make this tile show the symbol for the current player
-                state = player
-                
-                // Advance to next turn
-                turn += 1
+                if state == "" {
+                    // Make this tile show the symbol for the current player
+                    state = player
+                    
+                    // Advance to next turn
+                    turn += 1
+                }
                 
             }
     }
